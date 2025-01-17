@@ -1,0 +1,137 @@
+{
+    "chars": [
+        {
+            "id": 0,
+            "name": "Mike Fury",
+            "img": "boxer.png",
+            "basepv": 3,
+            "perks": [
+                {
+                    "name": "Gants renforcés",
+                    "img": "",
+                    "desc": "+5 PV",
+                    "misc": "Gants renforcés = dents défoncées"
+                },
+                {
+                    "name": "Protège-dents",
+                    "img": "",
+                    "desc": "+3 PV",
+                    "misc": "Si jamais les autres ont des gants renforcés"
+                },
+                {
+                    "name": "Manager",
+                    "img": "",
+                    "desc": "Ignorez les ennemis de puissance 3 ou moins",
+                    "misc": "\"Pas assez d'argent dans ce combat, laisse tomber\""
+                },
+                {
+                    "name": "Fausse patte",
+                    "img": "",
+                    "desc": "Ignorez les ennemis de puissance paire",
+                    "misc": "Faut pas contrarier un gaucher"
+                },
+                {
+                    "name": "Entrainement dans la neige",
+                    "img": "",
+                    "desc": "Ignorez le Cyborg Soviétique",
+                    "misc": "Pour Apollo"
+                },
+                {
+                    "name": "Mauvaise catégorie de poids",
+                    "img": "",
+                    "desc": "Avant d'entrer dans le Dojo, vous pouvez choisir un ennemi à ignorer",
+                    "misc": "3 oeufs crus, c'est pas un petit dèj' de champion"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "El Lucho",
+            "img": "false",
+            "basepv": 4,
+            "perks": [
+                {
+                    "name": "Chaise renforcée",
+                    "img": "",
+                    "desc": "+4 PV",
+                    "misc": "Permet aussi de se reposer après le combat"
+                },
+                {
+                    "name": "Ceinture de champion",
+                    "img": "",
+                    "desc": "+3 PV",
+                    "misc": ""
+                },
+                {
+                    "name": "Manager",
+                    "img": "",
+                    "desc": "Ignorez les ennemis de puissance 3 ou moins",
+                    "misc": "\"Mon client n'a pas de temps à perdre avec les jobbers\""
+                },
+                {
+                    "name": "Corde à linge",
+                    "img": "",
+                    "desc": "Ignorez les Catcheurs",
+                    "misc": "Sert à mettre des coups, mais également à sécher ses collants"
+                },
+                {
+                    "name": "Tag team",
+                    "img": "",
+                    "desc": "Ignorez un ennemi après l'avoir pioché (1 fois par Dojo)",
+                    "misc": "Laisse ton partenaire te donner un coup de main"
+                },
+                {
+                    "name": "Simplement 2",
+                    "img": "",
+                    "desc": "Si vos PV tombent à 0, récupérez 4 PV (1 fois par Dojo)",
+                    "misc": "\"Vous avez vu ça, Philippe ?!\""
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Xiao Lyn",
+            "img": "false",
+            "basepv": 3,
+            "perks": [
+                {
+                    "name": "Baton magique",
+                    "img": "",
+                    "desc": "+5 PV",
+                    "misc": "Servait autrefois de pilier dans un temple"
+                },
+                {
+                    "name": "Bandana",
+                    "img": "",
+                    "desc": "+3 PV",
+                    "misc": "+3000 Cool"
+                },
+                {
+                    "name": "Voix du zen",
+                    "img": "",
+                    "desc": "Ignorez les ennemis de puissance 6 ou plus",
+                    "misc": "Un combat évité est un combat gagné"
+                },
+                {
+                    "name": "Sparring",
+                    "img": "",
+                    "desc": "Ignorez les ennemis de puissance 2 ou moins, et ajoutez leur puissance à vos PV",
+                    "misc": ""
+                },
+                {
+                    "name": "Préparation mentale",
+                    "img": "",
+                    "desc": "Avant d'entrer dans le Dojo, vous pouvez choisir un ennemi à ignorer",
+                    "misc": ""
+                },
+                {
+                    "name": "Haricot magique",
+                    "img": "",
+                    "desc": "Si vos PV tombent à 0, récupérez 3 PV (1 fois par Dojo)",
+                    "misc": "Plutôt fade..."
+                }
+            ]
+        }
+    ] 
+}
+
