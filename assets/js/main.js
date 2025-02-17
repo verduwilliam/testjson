@@ -73,9 +73,9 @@
     }
 
     async function fetchData(){
-        const fetchChars = await fetch('https://verduwilliam.github.io/WttD/assets/json/characters.json');
-        const fetchFoes = await fetch('https://verduwilliam.github.io/WttD/assets/json/foes.json');
-        const fetchTexts = await fetch('https://verduwilliam.github.io/WttD/assets/json/txt.json');
+        const fetchChars = await fetch('https://verduwilliam.github.io/testjson/assets/json/characters.json');
+        const fetchFoes = await fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json');
+        const fetchTexts = await fetch('https://verduwilliam.github.io/testjson/assets/json/txt.json');
         resultChars = await fetchChars.json();
         resultFoes = await fetchFoes.json();
         resultTexts = await fetchTexts.json();
