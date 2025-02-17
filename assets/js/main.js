@@ -72,7 +72,7 @@
         fetchData();
     }
 
-    async fetchData(){
+    async function fetchData(){
         const fetchChars = await fetch('https://verduwilliam.github.io/testjson/assets/json/characters.json');
         const fetchFoes = await fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json');
         const fetchTexts = await fetch('https://verduwilliam.github.io/testjson/assets/json/txt.json');
