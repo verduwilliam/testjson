@@ -18,7 +18,7 @@
     var diff = 0;
     var nbRemainingPerks = 0; // pour savoir s'il reste de l'eqpmt pdt la phase de pioche
     var txtCpu = {}; // textes affichés dynamiquement
-    var txtSplash = {}; // textes affichés dynamiquement
+    var txtSplash = []; // textes affichés dynamiquement
 
     $(function(){ // chargement page
         // Nouvelle partie
