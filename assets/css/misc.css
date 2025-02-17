@@ -1,0 +1,71 @@
+.pixText {
+    font-family: 'PressStart2P', sans-serif;
+    color: #e3dfd3;
+    font-size: 16px;
+    line-height: 1;
+}
+@media (min-width: 768px) {
+    .pixText {
+        font-size: 12px;
+   }
+}
+@media (min-width: 1441px) {
+    .pixText {
+        font-size: 18px;
+   }
+}
+.pixText a {
+    color: #ffdb00;
+    text-decoration: underline;
+}
+.splash, .flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home, .fight {
+    z-index: 1;
+}
+.rules, .selectChar, .drawPhase {
+    z-index: 2;
+}
+.splash {
+    z-index: 3;
+}
+.fight, .splash, .selectChar, .drawPhase {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden scroll;
+    scrollbar-width: none;
+    transition: opacity 0.5s;
+}
+.disabled {
+    pointer-events: none;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 100vh;
+}
+.hidden.hidden--left {
+    transform: translate(-100vw,0);
+}
+.hidden.hidden--right {
+    transform: translate(100vw,0);
+}
+.hidden.hidden--bottom {
+    transform: translate(0,100vh);
+}
+@media (max-width: 767px) {
+    .desk {
+        display: none !important;
+   }
+}
+@media (min-width: 768px) {
+    .mob {
+        display: none !important;
+   }
+}

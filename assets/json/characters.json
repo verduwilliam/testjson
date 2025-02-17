@@ -1,0 +1,158 @@
+{
+    "chars": [
+        {
+            "id": 0,
+            "name": "Mike Fury",
+            "img": "boxer.png",
+            "basehp": 3,
+            "comp_color": "#cca158",
+            "perks": [
+                {
+                    "name": "Gants renforcés",
+                    "img": "box-gloves.png",
+                    "desc": "+5 PV",
+                    "effect": "hp",
+                    "effect_val": 5
+                },
+                {
+                    "name": "Protège-dents",
+                    "img": "box-mguard.png",
+                    "desc": "+3 PV",
+                    "effect": "hp",
+                    "effect_val": 3
+                },
+                {
+                    "name": "Manager",
+                    "img": "box-manager.png",
+                    "desc": "Ignorez les ennemis de puissance 3 ou moins",
+                    "effect": "ignore",
+                    "effect_val": [1,2,3]
+                },
+                {
+                    "name": "Fausse patte",
+                    "img": "box-lefty.png",
+                    "desc": "Ignorez les ennemis de puissance paire",
+                    "effect": "ignore",
+                    "effect_val": [2,4,6]
+                },
+                {
+                    "name": "Entrainement dans la neige",
+                    "img": "box-train.png",
+                    "desc": "Ignorez le Cyborg Soviétique",
+                    "effect": "ignore",
+                    "effect_val": [9]
+                },
+                {
+                    "name": "Mauvaise catégorie de poids",
+                    "img": "box-wght.png",
+                    "desc": "Avant d'entrer dans le Dojo, vous pouvez choisir un ennemi à ignorer",
+                    "effect": "ignoreChoiceBefore",
+                    "effect_val": ""
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "El Lucho",
+            "img": "lucha.png",
+            "basehp": 4,
+            "comp_color": "#2dc054",
+            "perks": [
+                {
+                    "name": "Chaise renforcée",
+                    "img": "lucha-chair.png",
+                    "desc": "+4 PV",
+                    "effect": "hp",
+                    "effect_val": 4
+                },
+                {
+                    "name": "Ceinture de champion",
+                    "img": "lucha-belt.png",
+                    "desc": "+3 PV",
+                    "effect": "hp",
+                    "effect_val": 3
+                },
+                {
+                    "name": "Manager",
+                    "img": "lucha-manager.png",
+                    "desc": "Ignorez les ennemis de puissance 3 ou moins",
+                    "effect": "ignore",
+                    "effect_val": [1,2,3]
+                },
+                {
+                    "name": "Corde à linge",
+                    "img": "lucha-clothesln.png",
+                    "desc": "Ignorez les Catcheurs",
+                    "effect": "ignore",
+                    "effect_val": [5]
+                },
+                {
+                    "name": "Tag team",
+                    "img": "lucha-tag_team.png",
+                    "desc": "Ignorez un ennemi après l'avoir pioché (1 fois par Dojo)",
+                    "effect": "ignoreChoice",
+                    "effect_val": ""
+                },
+                {
+                    "name": "Simplement 2",
+                    "img": "lucha-falsefinish.png",
+                    "desc": "Si vos PV tombent à 0, récupérez 4 PV (1 fois par Dojo)",
+                    "effect": "rez",
+                    "effect_val": 4
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Xiao Lyn",
+            "img": "shaolin.png",
+            "basehp": 3,
+            "comp_color": "#bc30d1",
+            "perks": [
+                {
+                    "name": "Baton extensible",
+                    "img": "shao-staff.png",
+                    "desc": "+5 PV",
+                    "effect": "hp",
+                    "effect_val": 5
+                },
+                {
+                    "name": "Bandana",
+                    "img": "shao-bandana.png",
+                    "desc": "+3 PV",
+                    "effect": "hp",
+                    "effect_val": 3
+                },
+                {
+                    "name": "Technique secrète",
+                    "img": "shao-techn.png",
+                    "desc": "Ignorez les ennemis de puissance 6 ou plus",
+                    "effect": "ignore",
+                    "effect_val": [6,7,9]
+                },
+                {
+                    "name": "Renforcement shaolin",
+                    "img": "shao-sparring.png",
+                    "desc": "Ignorez les ennemis de puissance 2 ou moins, et ajoutez leur puissance à vos PV",
+                    "effect": "ignoreHeal",
+                    "effect_val": [1,2]
+                },
+                {
+                    "name": "Voix du zen",
+                    "img": "shao-zen.png",
+                    "desc": "Avant d'entrer dans le Dojo, vous pouvez choisir un ennemi à ignorer",
+                    "effect": "ignoreChoiceBefore",
+                    "effect_val": ""
+                },
+                {
+                    "name": "Haricot magique",
+                    "img": "shao-senzu.png",
+                    "desc": "Si vos PV tombent à 0, récupérez 3 PV (1 fois par Dojo)",
+                    "effect": "rez",
+                    "effect_val": 3
+                }
+            ]
+        }
+    ] 
+}
+

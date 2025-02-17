@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Dojo</title>
+
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/keyframes.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./assets/css/btn.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    
+    <!-- Home -->
+    <div class="home flexCenter">
+        <h1 class="hidden">Welcome to the Dojo</h1>
+        <div class="home__btns hidden">
+            <button type="button" class="btn btn--green jsNewGameEasy">Easy</button>
+            <button type="button" class="btn btn--yellow jsNewGameHard">Hard</button>
+            <button type="button" class="btn btn--blue jsRules">Règles</button>
+        </div>
+        <div class="pixText hidden">
+            Site : <a href="https://fr.linkedin.com/in/william-verdu-239388140" target="_blank">William Verdu</a> - <a href="https://github.com/verduwilliam/WttD" target="_blank">github</a><br>
+            Inspiré par <a href="https://iello.fr/jeux/welcome-to-the-dungeon/" target="_blank">Welcome to the Dungeon</a>
+        </div>
+    </div>
+    <!-- /Home -->
+
+    <!-- Card - Rules -->
+    <div class="rules hidden">
+        <div class="rules__container">
+            <h2>Règles</h2>
+            <div class="rules__body">
+                <h3>Vue d'ensemble</h3>
+                <p>
+                    Welcome to the Dojo se joue en 2 manches. Durant chacune d'entre elles, un combattant s'avance avec un ensemble d'équipements. <br>
+                    Tour à tour, vous pourrez ajouter des ennemis dans le Dojo, enlever un équipement au combattant, ou vous retirer de la manche. L'ordinateur en fera de même à chaque tour. <br>
+                    Si l'ordinateur se retire, vous devrez entrer dans le Dojo et affronter tous les ennemis placés au cours de la manche avec le peu d'équipement qu'il vous reste.
+                </p>
+                <h3>But du jeu</h3>
+                <p>
+                    Si vous arrivez à traverser victorieusement deux Dojos, vous gagnez la partie. Si vous échouez dans deux Dojos, vous êtes éliminé.
+                </p>
+                <h3>Début d'une manche</h3>
+                <p>Au début de chaque manche, vous pouvez choisir le personnage à utiliser pour celle-ci. Vous retrouvez sur cet écran les PV de base ainsi que l'équipement de chaque personnage.</p>
+                <h3>Enchères</h3>
+                <p>
+                    Après avoir pioché un ennemi, vous pouvez choisir de l'ajouter au Dojo et l'affronter lorsque vous y entrerez, ou sacrifier une partie de votre équipement pour l'exclure de cette manche. <br>
+                    L'ordinateur fait de même pendant son tour, cependant le montre pioché ne vous sera pas indiqué. <br>
+                    Les pièces d'équipement sacrifiées ou utilisées pendant une manche seront réinitialisées la manche suivante.</p>
+                <div class="rules__legpic">
+                    <img src="./assets/img/misc/rules-draw.jpg" alt="Monstre pioché" class="desk">
+                    <img src="./assets/img/misc/rules-draw-mob.jpg" alt="Monstre pioché" class="mob">
+                    <ol>
+                        <li style="--desk-top: 69%; --desk-left: 23%; --mob-top: 71vw; --mob-left: 60%;">Nom de l'ennemi</li>
+                        <li style="--desk-top: 52%; --desk-left: 21%; --mob-top: 43vw; --mob-left: 50%;">Illustration de l'ennemi</li>
+                        <li style="--desk-top: 37%; --desk-left: 16%; --mob-top: 13vw; --mob-left: 42%;">Dégats infligés par l'ennemi</li>
+                        <li style="--desk-top: 50%; --desk-left: 38%; --mob-top: 38vw; --mob-left: 19%;">Actions possibles</li>
+                        <li style="--desk-top: 79%; --desk-left: 29.4%; --mob-top: 110vw; --mob-left: 29%;">Equipement pouvant être sacrifié</li>
+                        <li style="--desk-top: 79%; --desk-left: 32.7%; --mob-top: 131vw; --mob-left: 29%;">Equipement déjà sacrifié pour cette manche</li>
+                        <li style="--desk-top: 86%; --desk-left: 24.3%; --mob-top: 95vw; --mob-left: 50%;">Nombre d'ennemis restants dans le deck (bleu) et ajoutés dans le Dojo (rouge)</li>
+                    </ol>
+                </div>
+                <h3>Combat</h3>
+                <p>
+                    Avant d'affronter chaque ennemi, vous aurez un récapitulatif de votre santé, votre équipement actif, ainsi qu'un descriptif de l'ennemi. <br>
+                    Si vous pouvez utilisez un équipement, un bouton vous l'indiquera à côté du bouton "Go".
+                </p>
+                <div class="rules__legpic">
+                    <img src="./assets/img/misc/rules-fight.jpg" alt="Combat" class="desk">
+                    <img src="./assets/img/misc/rules-fight-mob.jpg" alt="Combat" class="mob">
+                    <ol>
+                        <li style="--desk-top: 11%; --desk-left: 7%; --mob-top: 90vw; --mob-left: 65%;">Santé</li>
+                        <li style="--desk-top: 19%; --desk-left: 15%; --mob-top: 71.7vw; --mob-left: 40%;">Nom du joueur</li>
+                        <li style="--desk-top: 87%; --desk-left: 15%; --mob-top: 108vw; --mob-left: 76%;">Equipement utilisable cette manche</li>
+                        <li style="--desk-top: 19%; --desk-left: 39%; --mob-top: 10.6vw; --mob-left: -2%;">Nom de l'ennemi</li>
+                        <li style="--desk-top: 50%; --desk-left: 39%; --mob-top: 24vw; --mob-left: 79%;">Illustration de l'ennemi</li>
+                        <li style="--desk-top: 11%; --desk-left: 49.5%; --mob-top: 22vw; --mob-left: 21%;">Dégats infligés par l'ennemi</li>
+                        <li style="--desk-top: 87%; --desk-left: 46%; --mob-top: 24vw; --mob-left: 79%;">Nombre d'ennemis restants</li>
+                        <li style="--desk-top: 11%; --desk-left: 27.5%; --mob-top: 116vw; --mob-left: 44%;">Actions possibles</li>
+                        <li style="--desk-top: 7%; --desk-left: 22%; --mob-top: 64vw; --mob-left: 80%;">Manches remportées</li>
+                        <li style="--desk-top: 7%; --desk-left: 33.8%; --mob-top: 3vw; --mob-left: 31%;">Manches perdues</li>
+                    </ol>
+                </div>
+            </div>
+            <h3>Combattants</h3>
+            <div class="rules__fighters swiper">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div><div class="swiper-button-next"></div>
+            </div>
+            <h3>Ennemis</h3>
+            <div class="rules__foes swiper locked">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div><div class="swiper-button-next"></div>
+            </div>
+            <button class="btn btn--red jsDeleteCookies hidden" type="button">Supprimer les cookies de victoire</button>
+        </div>
+        <button class="btn btn--red jsRulesClose" type="button">X</button>
+    </div>
+    <!-- /Card - Rules -->
+
+    <!-- Splash - new game -->
+    <div class="splash splash--round splash--round--0 hidden">
+        <div class="splash--round__step splash--round__step--0--0 hidden">
+            <img src="./assets/img/splash/round_1_1_back.png" alt="" class="splash--round__img splash--round__img--0--0--0 hidden" style="--duration: 2500ms; --delay: 0ms;">
+            <img src="./assets/img/splash/round_1_1_hands.png" alt="" class="splash--round__img splash--round__img--0--0--1 hidden" style="--duration: 400ms; --delay: 700ms;">
+            <img src="./assets/img/splash/round_1_1_em.png" alt="" class="splash--round__img splash--round__img--0--0--2 hidden" style="--duration: 300ms; --delay: 1600ms;">
+        </div>
+        <div class="splash--round__step splash--round__step--0--1 hidden">
+            <img src="./assets/img/splash/round_1_2.png" alt="" class="splash--round__img splash--round__img--0--1--0 hidden" style="--duration: 2000ms; --delay: 0ms;">
+        </div>
+        <div class="splash--round__step splash--round__step--0--2 hidden">
+            <img src="./assets/img/splash/round_1_3_char.png" alt="" class="splash--round__img splash--round__img--0--2--0 hidden" style="--duration: 1200ms; --delay: 0ms;">
+            <img src="./assets/img/splash/round_1_3_speech.png" alt="" class="splash--round__img splash--round__img--0--2--1 hidden" style="--duration: 1200ms; --delay: 700ms;">
+            <img src="./assets/img/splash/round_1_3_bubble-blue.png" alt="" class="splash--round__img splash--round__img--0--2--2 hidden" style="--duration: 900ms; --delay: 2200ms;">
+            <img src="./assets/img/splash/round_1_3_bubble-green.png" alt="" class="splash--round__img splash--round__img--0--2--3 hidden" style="--duration: 900ms; --delay: 3400ms;">
+        </div>
+        <div class="pixText hidden"></div>
+    </div>
+    <!-- /Splash - new game -->
+
+    <!-- Splash - manche 2 -->
+    <div class="splash splash--round splash--round--1 hidden">
+        <div class="splash--round__step splash--round__step--1--0 hidden">
+            <img src="./assets/img/splash/round_2_1_a.jpg" alt="" class="splash--round__img splash--round__img--1--0--0 hidden" style="--duration: 2000ms; --delay: 0ms;">
+            <img src="./assets/img/splash/round_2_1_door-left.jpg" alt="" class="splash--round__img splash--round__img--1--0--1 hidden" style="--duration: 500ms; --delay: 0ms;">
+            <img src="./assets/img/splash/round_2_1_door-right.jpg" alt="" class="splash--round__img splash--round__img--1--0--2 hidden" style="--duration: 500ms; --delay: 0ms;">
+        </div>
+        <div class="splash--round__step splash--round__step--1--1 hidden">
+            <img src="./assets/img/splash/round_2_2_back.jpg" alt="" class="splash--round__img splash--round__img--1--1--0 hidden" style="--duration: 1700ms; --delay: 0ms;">
+            <img src="./assets/img/splash/round_2_2_baby.png" alt="" class="splash--round__img splash--round__img--1--1--1 hidden" style="--duration: 1200ms; --delay: 400ms;">
+        </div>
+        <div class="splash--round__step splash--round__step--1--2 hidden">
+            <img src="./assets/img/splash/round_2_3.png" alt="" class="splash--round__img splash--round__img--1--2--0 hidden" style="--duration: 1500ms; --delay: 0ms;">
+        </div>
+        <div class="pixText hidden"></div>
+    </div>
+    <!-- /Splash - manche 2 -->
+
+    <!-- Splash - congrats -->
+    <div class="splash splash--round splash--round--2 hidden">
+        <div class="pixText hidden"></div>
+    </div>
+    <!-- /Splash - congrats -->
+
+    <!-- Splash - CPU -->
+    <div class="splash splash--cpu hidden">
+        <img src="./assets/img/splash/cpu-think.png" alt="L'ordi réfléchit..." class="splash--cpu__img splash--cpu__img--think">
+        <img src="./assets/img/splash/cpu-add.png" alt="L'ordi ajoute l'ennemi au Dojo" class="splash--cpu__img splash--cpu__img--add hidden">
+        <img src="./assets/img/splash/cpu-sacrifice.png" alt="L'ordi sacrifie une partie de l'équipement" class="splash--cpu__img splash--cpu__img--sacrifice hidden">
+        <img src="./assets/img/splash/cpu-retire.png" alt="Préparez-vous à entrer dans le Dojo!" class="splash--cpu__img splash--cpu__img--retire hidden">
+        <div class="pixText"></div>
+    </div>
+    <!-- /Splash - CPU -->
+
+    <!-- Splash - end round -->
+    <div class="splash splash--win hidden">
+        <span>Gagné!</span>
+    </div>
+    <div class="splash splash--lose hidden">
+        <span>Perdu...</span>
+    </div>
+    <!-- /Splash - end round -->
+
+    <!-- Splash - game over -->
+    <div class="splash splash--gameover hidden">
+        <div>Game over...</div>
+        <button class="btn btn--green jsNewGame">Réessayer</button>
+        <button class="btn btn--blue jsMenu">Menu principal</button>
+    </div>
+    <!-- /Splash - game over -->
+
+    <!-- Splash - choix ennemi à ignorer pour ce round -->
+    <div class="splash splash--ignore hidden">
+        <p>Choisissez un ennemi à ignorer pour ce round</p>
+        <div class="splash--ignore__grid"></div>
+    </div>
+    <!-- /Splash - choix ennemi à ignorer pour ce round -->
+
+    <!-- Select char -->
+    <div class="selectChar flexCenter hidden">
+        <h2>Choisissez votre personnage</h2>
+        <div class="selectChar__loop"></div>
+    </div>
+    <!-- /Select char -->
+
+    <!-- pioche ou passe -->
+    <div class="drawPhase hidden">
+        <div class="drawPhase__bottom"></div>
+        <div class="drawPhase__draw">
+            <div class="drawPhase__deck drawPhase__deck--big"></div>
+            <button type="button" class="drawPhase__draw__btn jsDraw">Pioche</button>
+            <div class="drawPhase__card">
+                <div class="drawPhase__card__side"></div>
+            </div>
+        </div>
+        <div class="drawPhase__pass hidden--right pixText">
+            OU
+            <button type="button" class="btn btn--red jsGoToSelectChar">Passe</button>
+        </div>
+        <div class="drawPhase__infos hidden hidden--right">
+            <button type="button" class="btn btn--orange jsAddDojo">Ajout au Dojo</button>
+            <button type="button" class="btn btn--red jsGoToSacrEqpmt">Sacr. équipement</button>
+        </div>
+    </div>
+    <!-- /pioche ou passe -->
+
+    <!-- fight -->
+    <div class="fight fight--dark flexCenter hidden">
+        <div class="fight__round hidden"></div>
+        <div class="fight__ui fight__ui--p1 hidden hidden--left">
+            <div class="fight__ui__rounds"><span></span><span></span></div>
+            <div class="fight__ui__border"></div>
+            <div class="fight__ui__pv">
+                <span class="fight__ui__pv--current"></span><span class="fight__ui__pv--max"></span>
+            </div>
+            <div class="fight__ui__name"></div>
+            <div class="fight__ui__perks"></div>
+        </div>
+        <div class="fight__ui fight__ui--p2 hidden hidden--left">
+            <div class="fight__ui__rounds"><span></span><span></span></div>
+            <div class="fight__ui__border"></div>
+            <div class="fight__ui__pv">
+                <span></span>
+            </div>
+            <div class="fight__ui__name"></div>
+            <div class="fight__ui__dojo"></div>
+        </div>
+        <div class="fight__btns hidden">
+            <button class="btn btn--orange jsGo">Go!</button>
+            <button class="btn btn--green jsTagTeam hidden">TagTeam</button>
+        </div>
+        <div class="fight__imgs hidden">
+            <img src="" alt="El Lucho" class="fight__img fight__img--p1 hidden hidden--left">
+            <img src="" alt="Sbire" class="fight__img fight__img--p2 hidden hidden--left">
+        </div>
+    </div>
+    <!-- /fight -->
+    
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

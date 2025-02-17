@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Thunderstrike";
+    src: url("../fonts/thunderstrike.ttf");
+}
+@font-face {
+    font-family: "Thunderstrike-Half";
+    src: url("../fonts/thunderstrikehalf.ttf");
+}
+@font-face {
+    font-family: "Thunderstrike-Grad";
+    src: url("../fonts/thunderstrikegrad.ttf");
+}
+ 
+@font-face {
+    font-family: "PressStart2P";
+    src: url("../fonts/PressStart2P-Regular.ttf");
+}
+
+@font-face {
+    font-family: "SpaceGrotesk";
+    src: url("../fonts/SpaceGrotesk-VariableFont_wght.ttf");
+}

@@ -1,0 +1,425 @@
+.fight{
+    background-image: url('../img/bg/stage1.jpg');
+    background-position: center bottom 28%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::before{
+        content: '';
+        display: block;
+        width: 100%; height: 100%;
+        position: fixed;
+        top: 0; left: 0;
+        background: linear-gradient(to bottom, #0707078a, #070707, #0707078a); 
+        transition: 0.5s;
+        opacity: 0.4;
+        pointer-events: none;
+        @media (orientation: landscape){
+            background: radial-gradient(#0707078a,#070707);
+        }
+    }
+    &--dark{
+        &::before{
+            opacity: 1;
+        }
+    }
+    &__round{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        font-family: 'Thunderstrike', serif;
+        font-size: 70px;
+        z-index: 5;
+        color: #FFD700;
+        -webkit-text-stroke: 3px #111;
+        text-shadow: 10px 10px 0 red;
+        pointer-events: none;
+        @media (orientation: landscape){
+            font-size: 93px;
+            -webkit-text-stroke: 7px #111;
+            text-shadow: 7px 7px 0 red;
+        }
+        @media (orientation: landscape) and (min-width: 1441px){
+            font-size: 140px;
+            -webkit-text-stroke: 10px #111;
+            text-shadow: 10px 10px 0 red;
+        }
+        div{
+            transition: 0.5s;
+        }
+        div:first-child{
+            text-align: left;
+            transform: translateX(100vw);
+        }
+        div:last-child{
+            text-align: right;
+            transform: translateX(-100vw);
+        }
+        &:not(.hidden){
+            div:first-child{
+                animation: 1.6s ease-in 0s 1 txt-round-mob;
+            }
+            div:last-child{
+                animation: 1.6s ease-in 0.15s 1 txt-round-mob-2;
+            }
+            @media (orientation: landscape){
+                div:first-child{
+                    animation: 1.6s linear 0s 1 txt-round;
+                }
+                div:last-child{
+                    animation: 1.6s linear 0.15s 1 reverse txt-round;
+                }
+            }
+        }
+    }
+    &__ui{
+        position: absolute;
+        z-index: 1;
+        width: 60%;
+        @media (orientation: landscape){
+            width: 40%;
+            bottom: 33px;
+        }
+        @media (orientation: landscape) and (min-width: 1441px){
+            bottom: 50px;
+        }
+        &--p1{
+            top: 310px; right: 30px;
+            @media (orientation: landscape){
+                top: 33px; left: 5%; right: auto;
+            }
+            @media (orientation: landscape) and (min-width: 1441px){
+                top: 50px;
+            }
+            .fight__ui__pv{
+                flex-direction: row-reverse;
+                @media (orientation: landscape) {
+                    flex-direction: row;
+                }
+            }
+            .fight__ui__pv, .fight__ui__pv span{
+                scale: -1 1;
+                @media (orientation: landscape) {
+                    scale: 1 1;
+                }
+            } 
+        }
+        &--p2{
+            top: 20px; left: 30px;
+            scale: -1 1;
+            @media (orientation: landscape){
+                top: 33px; left: auto; right: 5%;
+            }
+            @media (orientation: landscape) and (min-width: 1441px){
+                top: 50px;
+            }
+            .fight__ui__border{
+                height: var(--mobHeight, 200px);
+                @media (orientation: landscape){
+                    height: 43px;
+                }
+                @media (orientation: landscape) and (min-width: 1441px){
+                    height: 60px;
+                }
+            }
+            .fight__ui__pv{
+                top: var(--mobTop, 170px);
+                scale: -1 1;
+                @media (orientation: landscape){
+                    top: 0;
+                    scale: 1 1;
+                }
+                span{
+                    text-align: right;
+                    @media (orientation: landscape){
+                        scale: -1 1;
+                    }
+                }
+            }
+            .fight__ui__name{
+                text-align: left;
+                scale: -1 1;
+            }
+        }
+        &__rounds{
+            position: absolute;
+            display: flex;
+            top: 0; right: 50px;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+            gap: 10px;
+            @media (orientation: landscape){
+                right: ~"calc(10% - 35px)";
+                flex-direction: column;
+            }
+            span{
+                display: block;
+                width: 10px; height: 10px;
+                border-radius: 100%;
+                border: solid 2px #e3dfd3;
+                @media (orientation: landscape){
+                    width: 20px; height: 20px;
+                    border-width: 3px;
+                }
+            }
+        }
+        &__border{
+            position: relative;
+            clip-path: ~"polygon(calc(100% - 60px) 0, 100% 0, 100% 100%, 0 100%, 20px calc(100% - 20px), 20px calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 5px, calc(100% - 60px) 5px)";
+            background-color: #e3dfd3;
+            width: ~"calc(100% + 20px)"; height: 145px;
+            top: 0; left: 0;
+            z-index: 2;
+            @media (orientation: landscape){
+                position: absolute;
+                clip-path: ~"polygon(0 0, 100% 0, 100% 75%, calc(30% + 5px) 75%, calc(25% + 5px) 100%, 0 100%)";
+                background-color: black;
+                width: ~"calc(90% + 10px)"; height: 43px;
+                top: -5px; left: -5px;
+                z-index: 1;
+            }
+            @media (orientation: landscape) and (min-width: 1441px){
+                height: 60px;
+            }
+        }
+        &__pv{
+            position: absolute;
+            width: 100%; height: 30px;
+            top: 115px; left: 20px;
+            color: #e3dfd3;
+            padding: 0 25px;
+            font-family: 'PressStart2P', sans-serif;
+            font-size: 40px;
+            display: flex;
+            align-items: flex-start;
+            z-index: 1;
+            @media (orientation: landscape){
+                clip-path: ~"polygon(0 0, 100% 0, 100% 70%, 30% 70%, 25% 100%, 0 100%)";
+                background-color: red;
+                width: 90%; height: 33px;
+                top: 0; left: 0;
+                padding: 0 7px;
+                font-size: 23px;
+                align-items: center;
+                z-index: 2;
+            }
+            @media (orientation: landscape) and (min-width: 1441px){
+                height: 50px;
+                padding: 0 10px;
+                font-size: 35px;
+            }
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                width: var(--percent); height: 100%;
+                top: 0; left: 0;
+                background-color: green;
+                z-index: -1;
+                transition: 0.5s;
+            }
+            & > span{
+                margin-top: -45px;
+                @media (orientation: landscape){
+                    margin-top: 0;
+                }
+            }
+            & > span&--max{
+                font-size: 20px;
+                margin-top: -28px;
+                @media (orientation: landscape){
+                    font-size: 16px;
+                    margin-top: 0;
+                }
+                @media (orientation: landscape) and (min-width: 1441px){
+                    font-size: 24px;
+                }
+            }
+        }
+        &__name{
+            width: 100%;
+            position: absolute;
+            top: 20px; right: 0;
+            text-align: right;
+            font-family: 'PressStart2P', sans-serif;
+            color: #e3dfd3;
+            font-size: 20px;
+            @media (orientation: landscape){
+                width: 57%;
+                top: 30px; right: 10%;
+                flex-direction: row;
+                align-items: flex-start;
+                font-size: 20px;
+                gap: 7px;
+            }
+            @media (orientation: landscape) and (min-width: 1441px){
+                top: 45px;
+                font-size: 30px;
+                gap: 10px;
+            }
+            span{
+                display: block;
+                line-height: 1.2;
+                @media (orientation: landscape){
+                    width: ~"calc(100% - 67px)";
+                }
+                @media (orientation: landscape) and (min-width: 1441px){
+                    width: ~"calc(100% - 100px)";
+                }
+            }
+        }
+        &__perks{
+            position: relative;
+            @media (orientation: landscape){
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 10px;
+            }
+            @media (orientation: landscape) and (min-width: 1441px){
+                gap: 15px;
+            }
+            // seulement l'icone du perk utile en mobile
+            @media (orientation: portrait){
+                .perk{
+                    position: absolute;
+                    top: 10px; right: 0;
+                    width: 40%;
+                    &__img{
+                        width: 100%;
+                    }
+                    &__infos{
+                        display: none;
+                    }
+                    &--available{
+                        filter: none;
+                        transform: none;
+                    }
+                    &--unavailable{
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        &__dojo{
+            position: absolute;
+            right: 0; bottom: -55px;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+            align-items: center;
+            padding: 10px;
+            overflow: hidden;
+            scale: -1 1;
+            @media (orientation: landscape){
+                left: -50px; right: auto;
+                bottom: -20px;
+                flex-direction: row;
+                padding: 20px 50px;
+            }
+            &__card{
+                width: 24px;
+                height: 36px;
+                background-color: #e3dfd3;
+                background-image: ~"repeating-linear-gradient(-45deg, transparent, transparent 5px, #e98d90 5px, #e98d90 8px), repeating-linear-gradient(45deg, transparent, transparent 5px, #e98d90 5px, #e98d90 8px), linear-gradient(to bottom, #e98d90 6px, transparent 6px, transparent calc(100% - 6px), #e98d90 calc(100% - 6px)), linear-gradient(to right, #e98d90 6px, transparent 6px, transparent calc(100% - 6px), #e98d90 calc(100% - 6px))";
+                border: solid #e3dfd3 3px;
+                rotate: 23deg;
+                @media (orientation: landscape){
+                    width: 32px;
+                    height: 48px;
+                    margin-left: -9px;
+                }
+                @media (orientation: landscape) and (min-width: 1441px){
+                    width: 48px;
+                    height: 72px;
+                    margin-left: -14px;
+                }
+                &.anim{
+                    animation: 0.6s linear 1 fight-card;
+                    transform: translateY(250%) rotate(400deg);
+                }
+            }
+            .pixText{
+                color: red;
+                margin-left: 15px;
+                line-height: 0.6;
+                font-size: 20px;
+                order: -1;
+                @media (orientation: landscape){
+                    margin-left: 0; margin-right: 22px;
+                    font-size: 27px;
+                }
+                @media (orientation: landscape) and (min-width: 1441px){
+                    margin-right: 34px;
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+    &__btns{
+        position: absolute;
+        bottom: 30px; left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        @media (orientation: landscape){
+            bottom: 20px;
+            left: 50%; translate: -50% 0;
+            gap: 20px;
+        }
+        @media (orientation: landscape) and (min-width: 768px){
+            top: 33px; bottom: auto;
+        }
+        @media (orientation: landscape) and (min-width: 1441px){
+            top: 50px;
+            gap: 30px;
+        }
+    }
+    &__imgs{
+        transition: 0.5s;
+    }
+    &__img{
+        transition: 0.5s;
+        display: block;
+        position: absolute;
+        @media (orientation: landscape){
+            top: auto !important; bottom: 6%;
+            width: auto !important;
+            height: 80vh;
+            object-fit: contain;
+        }
+        &--p1{
+            left: 0;
+            top: 330px;
+            width: 160px;
+            clip-path: ~"polygon(0 0, 100% 0, 100% 50%, 0 50%)";
+            @media (orientation: landscape){
+                left: 20vw;
+                clip-path: none;
+            }
+            &.hidden{
+                animation: 0.7s linear 1 fight-ko-mob--p1;
+                @media (orientation: landscape){
+                    animation: 0.7s linear 1 fight-ko;
+                }
+            }
+        }
+        &--p2{
+            right: 20px;
+            top: 20px;
+            width: 100px;
+            scale: -1 1;
+            @media (orientation: landscape){
+                right: 20vw;
+            }
+            &.hidden{
+                animation: 0.7s linear 1 fight-ko-mob;
+                @media (orientation: landscape){
+                    animation: 0.7s linear 1 fight-ko;
+                }
+            }
+        }
+    }
+}

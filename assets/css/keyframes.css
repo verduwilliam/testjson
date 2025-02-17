@@ -1,0 +1,346 @@
+@keyframes char-brightness {
+    0%{
+        filter: brightness(0);
+    }
+    80%{
+        filter: brightness(0);
+    }
+    90%{
+        filter: brightness(5);
+    }
+    95%{
+        filter: brightness(5);
+    }
+    100%{
+        filter: brightness(1);
+    }
+}
+
+@keyframes confettis {
+    0%{
+        background-position: 0 0;
+    }
+    25%{
+        background-position: 125px 125px;
+    }
+    50%{
+        background-position: 0 250px;
+    }
+    75%{
+        background-position: 125px 375px;
+    }
+    100%{
+        background-position: 0 500px;
+    }
+}
+
+@keyframes fight-card {
+    0%{
+        transform: translateY(0) rotate(0);
+    }
+    33%{
+        transform: translateY(-20px) rotate(-14deg);
+    }
+    100%{
+        transform: translateY(250%) rotate(400deg);
+    }
+}
+
+@keyframes fight-ko {
+    0%{
+        opacity: 1;
+        transform: rotate(0) translate(0, 0);
+    }
+    40%{
+        opacity: 1;
+        transform: rotate(-70deg) translate(100px, -300px);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(-90deg) translate(-300px, -400px);
+    }
+}
+
+@keyframes fight-ko-mob {
+    0%{
+        opacity: 1;
+        transform: translate(0px, 0);
+    }
+    5%{
+        transform: translate(10px, 0);
+    }
+    15%{
+        transform: translate(-10px, 0);
+    }
+    25%{
+        transform: translate(10px, 0);
+    }
+    35%{
+        transform: translate(-10px, 0);
+    }
+    45%{
+        transform: translate(0, 0);
+    }
+    75%{
+        opacity: 1;
+        transform: translate(0, 0);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(0, 75%);
+        clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+    }
+}
+
+@keyframes fight-ko-mob--p1 {
+    0%{
+        opacity: 1;
+        transform: translate(0px, 0);
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    }
+    5%{
+        transform: translate(10px, 0);
+    }
+    15%{
+        transform: translate(-10px, 0);
+    }
+    25%{
+        transform: translate(10px, 0);
+    }
+    35%{
+        transform: translate(-10px, 0);
+    }
+    45%{
+        transform: translate(0, 0);
+    }
+    75%{
+        opacity: 1;
+        transform: translate(0, 0);
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(0, 25%);
+        clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+    }
+}
+
+@keyframes home-title {
+    0%{
+        transform-origin: bottom;
+        filter: brightness(0.05) saturate(0.3);
+        transform: rotateX(-65deg);
+        opacity: 0.4;
+    }
+    75%{
+        scale: 0.6 1.4;
+        filter: brightness(1.6);
+        transform: rotateX(0);
+        opacity: 1;
+    }
+    100%{
+        scale: 1 1;
+        filter: none;
+    }
+}
+
+@keyframes select-char {
+    0%{
+        translate: 0 0;
+    }
+    50%{
+        translate: 0 20px;
+    }
+    100%{
+        translate: 0 0;
+    }
+}
+
+@keyframes txt-round {
+    0%{
+        transform: translateX(100vw);
+    }
+    15%{
+        transform: translateX(100px);
+    }
+    85%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes txt-round-mob {
+    0%{
+        transform: translate(0, -55vh);
+    }
+    15%{
+        transform: translate(0, 0);
+    }
+    45%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(0, -20px);
+    }
+    55%{
+        transform: translate(0, 0);
+    }
+    85%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(100vw, 0);
+    }
+}
+
+@keyframes txt-round-mob-2 {
+    0%{
+        transform: translate(0, 55vh);
+    }
+    15%{
+        transform: translate(0, 0);
+    }
+    45%{
+        transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(0, 20px);
+    }
+    55%{
+        transform: translate(0, 0);
+    }
+    85%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(-100vw, 0);
+    }
+}
+
+@keyframes txt-perk {
+    0%, 60%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-75%);
+    }
+}
+
+/* --------------------------------------- */
+
+@keyframes rounds-hands {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes rounds-em {
+    0%{
+        opacity: 0.3;
+        transform: scale(0.5) rotate(-31deg);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1.2) rotate(11deg);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes rounds-skew-in {
+    0%{
+        translate: 100vw 0;
+        transform: skewX(-20deg);
+    }
+    50%{
+        translate: 13% 0;
+        transform: skewX(-20deg);
+    }
+    75%{
+        translate: -11% 0;
+        transform: skewX(10deg);
+    }
+    100%{
+        translate: 0 0;
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes rounds-angry {
+    0%{
+        opacity: 1;
+        translate: 0 0;
+    }
+    50%{
+        translate: 0 30px;
+    }
+    100%{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes rounds-angry-speech {
+    0%{
+        opacity: 1;
+        scale: 1 1;
+    }
+    50%{
+        scale: -1 1;
+    }
+    100%{
+        opacity: 1;
+        scale: 1 1;
+    }
+}
+
+@keyframes rounds-ok {
+    0%{
+        opacity: 1;
+        scale: 1 1;
+    }
+    50%{
+        scale: -1 1;
+    }
+    100%{
+        opacity: 1;
+        scale: 1 1;
+    }
+}
+
+@keyframes rounds-door {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(40deg);
+    }
+}
+
+@keyframes rounds-door-right {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(-30deg);
+    }
+}
+
+@keyframes rounds-baby {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

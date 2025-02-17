@@ -1,0 +1,86 @@
+{
+    "cpu": {
+        "think": "L'ordi réfléchit...",
+        "add": "L'ordi ajoute l'ennemi au Dojo",
+        "sacrifice": "L'ordi sacrifie une partie de l'équipement",
+        "retire": "L'ordi passe son tour",
+        "nodeck": "Plus d'ennemis dans le deck",
+        "enter": "Préparez-vous à entrer dans le Dojo!",
+    },
+    "splash": [
+        [
+            {
+                "text": "La mafia a kidnappé El Pequeniño, le fils du légendaire El Lucho.",
+                "tag": "p",
+                "special": []
+            },
+            {
+                "text": "Déterminé à le sauver, El Lucho fait appel à ses deux amis : l'explosif Mike Fury et la redoutable Xiao Lyn.",
+                "tag": "p",
+                "special": []
+            },
+            {
+                "text": "Ensemble, ils s'enfoncent dans les profondeurs d'un entrepôt contrôlé par la mafia, prêts à affronter une armée de criminels pour récupérer l'enfant.",
+                "tag": "p",
+                "special": []
+            },
+        ],
+        [
+            {
+                "text": "El Pequeniño était introuvable dans l'entrepôt.",
+                "tag": "p",
+                "special": []
+            },
+            {
+                "text": "À la place, l'équipe découvre une lettre signée par le boss de la mafia, révélant que l'enfant est retenu dans sa luxueuse villa.",
+                "tag": "p",
+                "special": []
+            },
+            {
+                "text": "Sans hésiter, El Lucho, Mike Fury, et Xiao Lyn se préparent à prendre d'assaut le repaire du chef pour terminer leur mission.",
+                "tag": "p",
+                "special": []
+            },
+        ],
+        [
+            {
+                "text": "Félicitations!",
+                "tag": "h3",
+                "special": []
+            },
+            {
+                "text": "El Pequeniño est enfin en sécurité dans les bras de son père, grâce à votre courage et votre détermination !",
+                "tag": "p",
+                "special": []
+            },
+            {
+                "text": "Après avoir affronté des hordes de criminels et vaincu le redoutable boss de la mafia, l'équipe à prouvé que rien ne pouvait briser leur force et leur unité.",
+                "tag": "p",
+                "special": []
+            },
+            {
+                "text": "Vous êtes les véritables champions de cette histoire, bravo !",
+                "tag": "p",
+                "special": []
+            },
+            {
+                "text": "Si ce jeu en JavaScript vous a plu, n'hésitez pas à contacter le développeur, par téléphone au 06.11.31.11.17 ou par email à verduwilliam@gmail.com",
+                "tag": "p",
+                "special": [
+                    {
+                        "original": "le développeur",
+                        "replace": "<a href=\"https://fr.linkedin.com/in/william-verdu-239388140\">le développeur</a>"
+                    },
+                    {
+                        "original": "06.11.31.11.17",
+                        "replace": "<a href=\"tel:+33611311117\">06.11.31.11.17</a>"
+                    },
+                    {
+                        "original": "verduwilliam@gmail.com",
+                        "replace": "<a href=\"mailto:verduwilliam@gmail.com\">verduwilliam@gmail.com</a>"
+                    }
+                ]
+            }
+        ]
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "foes": [
+        {
+            "id": 0,
+            "name": "Steven Seagull",
+            "img": "steven_seagull.png",
+            "power": 1,
+            "nb": 2,
+            "misc": "Grand maitre de bullshido"
+        },
+        {
+            "id": 1,
+            "name": "Sbire",
+            "img": "goon.png",
+            "power": 2,
+            "nb": 2,
+            "misc": "Menu fretin"
+        },
+        {
+            "id": 2,
+            "name": "Ripou",
+            "img": "cop.png",
+            "power": 3,
+            "nb": 2,
+            "misc": "Le pouvoir lui est monté à la tête"
+        },
+        {
+            "id": 3,
+            "name": "Assassin",
+            "img": "hitman.png",
+            "power": 4,
+            "nb": 2,
+            "misc": "Se pense discret avec son tatouage à l'arrière du crâne"
+        },
+        {
+            "id": 4,
+            "name": "Catcheur",
+            "img": "rudo.png",
+            "power": 5,
+            "nb": 2,
+            "misc": "Fais aussi mal avec ses mots qu'avec ses poings"
+        },
+        {
+            "id": 5,
+            "name": "Boss",
+            "img": "boss.png",
+            "power": 6,
+            "nb": 2,
+            "misc": "C'est ce #@!@; qui a enlevé El Pequeniño"
+        },
+        {
+            "id": 6,
+            "name": "Champion poids-lourds",
+            "img": "world_champ.png",
+            "power": 7,
+            "nb": 1,
+            "misc": "Vole comme un papillon, pique comme un 38 tonnes"
+        },
+        {
+            "id": 7,
+            "name": "Cyborg Soviétique",
+            "img": "cyborg.png",
+            "power": 9,
+            "nb": 1,
+            "misc": "Développé pendant la guerre froide, un incident lui a permis de s'échapper de son labo"
+        }
+    ]
+}
