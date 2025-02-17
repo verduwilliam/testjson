@@ -17,7 +17,8 @@
     var odds = [[20,66], [8,33]]; // facile, difficile
     var diff = 0;
     var nbRemainingPerks = 0; // pour savoir s'il reste de l'eqpmt pdt la phase de pioche
-    var txt = {}; // textes affichés dynamiquement
+    var txtCpu = {}; // textes affichés dynamiquement
+    var txtSplash = {}; // textes affichés dynamiquement
 
     $(function(){ // chargement page
         // Nouvelle partie
@@ -68,316 +69,19 @@
                 hideShow(null, '.jsDeleteCookies');
             }
         }
-        fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json')
-             .then((response) => {response.json()}).then((json) => {console.log(json)});
-        chars = [
-            {
-                "id": 0,
-                "name": "Mike Fury",
-                "img": "boxer.png",
-                "basehp": 3,
-                "comp_color": "#cca158",
-                "perks": [
-                    {
-                        "name": "Gants renforcés",
-                        "img": "box-gloves.png",
-                        "desc": "+5 PV",
-                        "effect": "hp",
-                        "effect_val": 5
-                    },
-                    {
-                        "name": "Protège-dents",
-                        "img": "box-mguard.png",
-                        "desc": "+3 PV",
-                        "effect": "hp",
-                        "effect_val": 3
-                    },
-                    {
-                        "name": "Entraineur",
-                        "img": "box-manager.png",
-                        "desc": "Ignorez les ennemis de puissance 3 ou moins",
-                        "effect": "ignore",
-                        "effect_val": [1,2,3]
-                    },
-                    {
-                        "name": "Fausse patte",
-                        "img": "box-lefty.png",
-                        "desc": "Ignorez les ennemis de puissance paire",
-                        "effect": "ignore",
-                        "effect_val": [2,4,6]
-                    },
-                    {
-                        "name": "Entrainement dans la neige",
-                        "img": "box-train.png",
-                        "desc": "Ignorez le Cyborg Soviétique",
-                        "effect": "ignore",
-                        "effect_val": [9]
-                    },
-                    {
-                        "name": "Mauvaise catégorie de poids",
-                        "img": "box-wght.png",
-                        "desc": "Avant d'entrer dans le Dojo, vous pouvez choisir un ennemi à ignorer",
-                        "effect": "ignoreChoiceBefore",
-                        "effect_val": ""
-                    }
-                ]
-            },
-            {
-                "id": 1,
-                "name": "El Lucho",
-                "img": "lucha.png",
-                "basehp": 4,
-                "comp_color": "#2dc054",
-                "perks": [
-                    {
-                        "name": "Chaise renforcée",
-                        "img": "lucha-chair.png",
-                        "desc": "+4 PV",
-                        "effect": "hp",
-                        "effect_val": 4
-                    },
-                    {
-                        "name": "Ceinture de champion",
-                        "img": "lucha-belt.png",
-                        "desc": "+3 PV",
-                        "effect": "hp",
-                        "effect_val": 3
-                    },
-                    {
-                        "name": "Manager",
-                        "img": "lucha-manager.png",
-                        "desc": "Ignorez les ennemis de puissance 3 ou moins",
-                        "effect": "ignore",
-                        "effect_val": [1,2,3]
-                    },
-                    {
-                        "name": "Corde à linge",
-                        "img": "lucha-clothesln.png",
-                        "desc": "Ignorez les Catcheurs",
-                        "effect": "ignore",
-                        "effect_val": [5]
-                    },
-                    {
-                        "name": "Tag team",
-                        "img": "lucha-tag_team.png",
-                        "desc": "Ignorez un ennemi après l'avoir pioché (1 fois par Dojo)",
-                        "effect": "ignoreChoice",
-                        "effect_val": ""
-                    },
-                    {
-                        "name": "Simplement 2",
-                        "img": "lucha-falsefinish.png",
-                        "desc": "Si vos PV tombent à 0, récupérez 4 PV (1 fois par Dojo)",
-                        "effect": "rez",
-                        "effect_val": 4
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "name": "Xiao Lyn",
-                "img": "shaolin.png",
-                "basehp": 3,
-                "comp_color": "#bc30d1",
-                "perks": [
-                    {
-                        "name": "Baton extensible",
-                        "img": "shao-staff.png",
-                        "desc": "+5 PV",
-                        "effect": "hp",
-                        "effect_val": 5
-                    },
-                    {
-                        "name": "Bandana",
-                        "img": "shao-bandana.png",
-                        "desc": "+3 PV",
-                        "effect": "hp",
-                        "effect_val": 3
-                    },
-                    {
-                        "name": "Technique secrète",
-                        "img": "shao-techn.png",
-                        "desc": "Ignorez les ennemis de puissance 6 ou plus",
-                        "effect": "ignore",
-                        "effect_val": [6,7,9]
-                    },
-                    {
-                        "name": "Renforcement shaolin",
-                        "img": "shao-sparring.png",
-                        "desc": "Ignorez les ennemis de puissance 2 ou moins, et ajoutez leur puissance à vos PV",
-                        "effect": "ignoreHeal",
-                        "effect_val": [1,2]
-                    },
-                    {
-                        "name": "Voix du zen",
-                        "img": "shao-zen.png",
-                        "desc": "Avant d'entrer dans le Dojo, vous pouvez choisir un ennemi à ignorer",
-                        "effect": "ignoreChoiceBefore",
-                        "effect_val": ""
-                    },
-                    {
-                        "name": "Haricot magique",
-                        "img": "shao-senzu.png",
-                        "desc": "Si vos PV tombent à 0, récupérez 3 PV (1 fois par Dojo)",
-                        "effect": "rez",
-                        "effect_val": 3
-                    }
-                ]
-            }
-        ];
-        foes = [
-            {
-                "id": 0,
-                "name": "Steven Seagull",
-                "img": "steven_seagull.png",
-                "power": 1,
-                "nb": 2,
-                "misc": "Grand maitre de bullshido"
-            },
-            {
-                "id": 1,
-                "name": "Sbire",
-                "img": "goon.png",
-                "power": 2,
-                "nb": 2,
-                "misc": "Menu fretin"
-            },
-            {
-                "id": 2,
-                "name": "Ripou",
-                "img": "cop.png",
-                "power": 3,
-                "nb": 2,
-                "misc": "Le pouvoir lui est monté à la tête"
-            },
-            {
-                "id": 3,
-                "name": "Assassin",
-                "img": "hitman.png",
-                "power": 4,
-                "nb": 2,
-                "misc": "Se pense discret avec son tatouage à l'arrière du crâne"
-            },
-            {
-                "id": 4,
-                "name": "Catcheur",
-                "img": "rudo.png",
-                "power": 5,
-                "nb": 2,
-                "misc": "Fais aussi mal avec ses mots qu'avec ses poings"
-            },
-            {
-                "id": 5,
-                "name": "Boss",
-                "img": "boss.png",
-                "power": 6,
-                "nb": 2,
-                "misc": "C'est ce #@!@; qui a enlevé El Pequeniño"
-            },
-            {
-                "id": 6,
-                "name": "Champion poids-lourds",
-                "img": "world_champ.png",
-                "power": 7,
-                "nb": 1,
-                "misc": "Vole comme un papillon, pique comme un 38 tonnes"
-            },
-            {
-                "id": 7,
-                "name": "Cyborg Soviétique",
-                "img": "cyborg.png",
-                "power": 9,
-                "nb": 1,
-                "misc": "Développé pendant la guerre froide, un incident lui a permis de s'échapper de son labo"
-            }
-        ];
-        txt = {
-            "cpu": {
-                "think": "L'ordi réfléchit...",
-                "add": "L'ordi ajoute l'ennemi au Dojo",
-                "sacrifice": "L'ordi sacrifie une partie de l'équipement",
-                "retire": "L'ordi passe son tour",
-                "nodeck": "Plus d'ennemis dans le deck",
-                "enter": "Préparez-vous à entrer dans le Dojo!",
-            },
-            "splash": [
-                [
-                    {
-                        "text": "La mafia a kidnappé El Pequeniño, le fils du légendaire El Lucho.",
-                        "tag": "p",
-                        "special": []
-                    },
-                    {
-                        "text": "Déterminé à le sauver, El Lucho fait appel à ses deux amis : l'explosif Mike Fury et la redoutable Xiao Lyn.",
-                        "tag": "p",
-                        "special": []
-                    },
-                    {
-                        "text": "Ensemble, ils s'enfoncent dans les profondeurs d'un entrepôt contrôlé par la mafia, prêts à affronter une armée de criminels pour récupérer l'enfant.",
-                        "tag": "p",
-                        "special": []
-                    },
-                ],
-                [
-                    {
-                        "text": "El Pequeniño était introuvable dans l'entrepôt.",
-                        "tag": "p",
-                        "special": []
-                    },
-                    {
-                        "text": "À la place, l'équipe découvre une lettre signée par le boss de la mafia, révélant que l'enfant est retenu dans sa luxueuse villa.",
-                        "tag": "p",
-                        "special": []
-                    },
-                    {
-                        "text": "Sans hésiter, El Lucho, Mike Fury, et Xiao Lyn se préparent à prendre d'assaut le repaire du chef pour terminer leur mission.",
-                        "tag": "p",
-                        "special": []
-                    },
-                ],
-                [
-                    {
-                        "text": "Félicitations!",
-                        "tag": "h3",
-                        "special": []
-                    },
-                    {
-                        "text": "El Pequeniño est enfin en sécurité dans les bras de son père, grâce à votre courage et votre détermination !",
-                        "tag": "p",
-                        "special": []
-                    },
-                    {
-                        "text": "Après avoir affronté des hordes de criminels et vaincu le redoutable boss de la mafia, l'équipe à prouvé que rien ne pouvait briser leur force et leur unité.",
-                        "tag": "p",
-                        "special": []
-                    },
-                    {
-                        "text": "Vous êtes les véritables champions de cette histoire, bravo !",
-                        "tag": "p",
-                        "special": []
-                    },
-                    {
-                        "text": "Si ce jeu en JavaScript vous a plu, n'hésitez pas à contacter le développeur, par téléphone au 06.11.31.11.17 ou par email à verduwilliam@gmail.com",
-                        "tag": "p",
-                        "special": [
-                            {
-                                "original": "le développeur",
-                                "replace": "<a href=\"https://fr.linkedin.com/in/william-verdu-239388140\">le développeur</a>"
-                            },
-                            {
-                                "original": "06.11.31.11.17",
-                                "replace": "<a href=\"tel:+33611311117\">06.11.31.11.17</a>"
-                            },
-                            {
-                                "original": "verduwilliam@gmail.com",
-                                "replace": "<a href=\"mailto:verduwilliam@gmail.com\">verduwilliam@gmail.com</a>"
-                            }
-                        ]
-                    }
-                ]
-            ]
-        };
-        initHTML();
+        const fetchChars = await fetch('https://verduwilliam.github.io/testjson/assets/json/characters.json');
+        const fetchFoes = await fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json');
+        const fetchTexts = await fetch('https://verduwilliam.github.io/testjson/assets/json/txt.json');
+        resultChars = await fetchChars.json();
+        resultFoes = await fetchFoes.json();
+        resultTexts = await fetchTexts.json();
+        Promise.all([resultChars, resultFoes, resultTexts]).then(()=>{
+            chars = resultChars.chars;
+            foes = resultFoes.foes;
+            txtCpu = resultTexts.cpu;
+            txtSplash = resultTexts.splash;
+            initHTML();
+        })
     }
 
     function initHTML(){ // remplit la page avec les données de getData
@@ -1033,11 +737,11 @@
         let i = 0;
         let j = 0;
         let intervalText = setInterval(()=>{
-            if( i <= txt.cpu[val].length ){
-                $('.splash--cpu .pixText').html(txt.cpu[val].substring(0,i));
+            if( i <= txtCpu[val].length ){
+                $('.splash--cpu .pixText').html(txtCpu[val].substring(0,i));
                 i++;
-            }else if((val=='retire' || val=='nodeck') && ( j <= txt.cpu.enter.length )){
-                $('.splash--cpu .pixText').html(txt.cpu[val] + '<br>' + txt.cpu.enter.substring(0,j));
+            }else if((val=='retire' || val=='nodeck') && ( j <= txtCpu.enter.length )){
+                $('.splash--cpu .pixText').html(txtCpu[val] + '<br>' + txtCpu.enter.substring(0,j));
                 j++;
             }else{
                 clearInterval(intervalText);
@@ -1053,20 +757,20 @@
         let i = 0; // index du paragraphe
         let j = 0; // index du caractere
         let intervalText = setInterval(()=>{
-            if( j < txt.splash[wl[0]][i].text.length ){
-                newTextSplash = newTextSplashBuffer + '<'+txt.splash[wl[0]][i].tag+'>' + txt.splash[wl[0]][i].text.substring(0,j) + '</'+txt.splash[wl[0]][i].tag+'>';
+            if( j < txtSplash[wl[0]][i].text.length ){
+                newTextSplash = newTextSplashBuffer + '<'+txtSplash[wl[0]][i].tag+'>' + txtSplash[wl[0]][i].text.substring(0,j) + '</'+txtSplash[wl[0]][i].tag+'>';
                 $(selector).html(newTextSplash);
                 j++;
             }else{
-                let tmpTxt = txt.splash[wl[0]][i].text;
-                if(txt.splash[wl[0]][i].special.length){
-                    txt.splash[wl[0]][i].special.forEach(child => {
+                let tmpTxt = txtSplash[wl[0]][i].text;
+                if(txtSplash[wl[0]][i].special.length){
+                    txtSplash[wl[0]][i].special.forEach(child => {
                         tmpTxt = tmpTxt.replaceAll(child.original, child.replace);
                     });
                 }
-                newTextSplashBuffer = newTextSplashBuffer + '<'+txt.splash[wl[0]][i].tag+'>' + tmpTxt + '</'+txt.splash[wl[0]][i].tag+'>';
+                newTextSplashBuffer = newTextSplashBuffer + '<'+txtSplash[wl[0]][i].tag+'>' + tmpTxt + '</'+txtSplash[wl[0]][i].tag+'>';
                 $(selector).html(newTextSplashBuffer);
-                if(i<txt.splash[wl[0]].length-1){
+                if(i<txtSplash[wl[0]].length-1){
                     i++;
                     j = 0;
                 }else if(wl[0]<2){
