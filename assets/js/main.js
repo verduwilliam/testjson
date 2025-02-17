@@ -76,15 +76,14 @@
         const fetchChars = await fetch('https://verduwilliam.github.io/testjson/assets/json/characters.json');
         const fetchFoes = await fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json');
         const fetchTexts = await fetch('https://verduwilliam.github.io/testjson/assets/json/txt.json');
-        resultChars = await fetchChars.json();
-        resultFoes = await fetchFoes.json();
-        resultTexts = await fetchTexts.json();
+        const resultChars = await fetchChars.json();
+        const resultFoes = await fetchFoes.json();
+        const resultTexts = await fetchTexts.json();
         Promise.all([resultChars, resultFoes, resultTexts]).then(()=>{
             chars = resultChars.chars;
             foes = resultFoes.foes;
-            let txt = resultTexts;
-            txtCpu = txt.cpu;
-            txtSplash = txt.splash;
+            txtCpu = resultTexts.cpu;
+            txtSplash = resultTexts.splash;
             initHTML();
         })
     }
