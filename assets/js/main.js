@@ -161,7 +161,7 @@
         const fetchFoes = await fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json');
         const resultChars = await fetchChars.json();
         const resultFoes = await fetchFoes.json();
-        Promise.all([resultChars, resultFoes, resultTexts]).then(()=>{
+        Promise.all([resultChars, resultFoes]).then(()=>{
             chars = resultChars.chars;
             foes = resultFoes.foes;
             initHTML();
