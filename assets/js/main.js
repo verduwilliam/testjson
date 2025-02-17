@@ -72,7 +72,7 @@
         fetchData();
     }
 
-    async function fetchData(){
+    async fetchData(){
         const fetchChars = await fetch('https://verduwilliam.github.io/testjson/assets/json/characters.json');
         const fetchFoes = await fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json');
         const fetchTexts = await fetch('https://verduwilliam.github.io/testjson/assets/json/txt.json');
@@ -82,8 +82,9 @@
         Promise.all([resultChars, resultFoes, resultTexts]).then(()=>{
             chars = resultChars.chars;
             foes = resultFoes.foes;
-            txtCpu = resultTexts.cpu;
-            txtSplash = resultTexts.splash;
+            let txt = resultTexts;
+            txtCpu = txt.cpu;
+            txtSplash = txt.splash;
             initHTML();
         })
     }
