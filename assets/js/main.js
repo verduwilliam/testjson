@@ -68,8 +68,8 @@
                 hideShow(null, '.jsDeleteCookies');
             }
         }
-        // fetch('https://github.com/verduwilliam/testjson/blob/main/characters.json')
-        //     .then((response) => {response.json()}).then((json) => {console.log(json)});
+        fetch('https://github.com/verduwilliam/testjson/blob/main/characters.json')
+             .then((response) => {response.json()}).then((json) => {console.log(json)});
         chars = [
             {
                 "id": 0,
