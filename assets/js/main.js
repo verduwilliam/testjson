@@ -17,8 +17,92 @@
     var odds = [[20,66], [8,33]]; // facile, difficile
     var diff = 0;
     var nbRemainingPerks = 0; // pour savoir s'il reste de l'eqpmt pdt la phase de pioche
-    var txtCpu = {}; // textes affichés dynamiquement
-    var txtSplash = []; // textes affichés dynamiquement
+    var txt = {
+        "cpu": {
+            "think": "L'ordi réfléchit...",
+            "add": "L'ordi ajoute l'ennemi au Dojo",
+            "sacrifice": "L'ordi sacrifie une partie de l'équipement",
+            "retire": "L'ordi passe son tour",
+            "nodeck": "Plus d'ennemis dans le deck",
+            "enter": "Préparez-vous à entrer dans le Dojo!"
+        },
+        "splash": [
+            [
+                {
+                    "text": "La mafia a kidnappé El Pequeniño, le fils du légendaire El Lucho.",
+                    "tag": "p",
+                    "special": []
+                },
+                {
+                    "text": "Déterminé à le sauver, El Lucho fait appel à ses deux amis : l'explosif Mike Fury et la redoutable Xiao Lyn.",
+                    "tag": "p",
+                    "special": []
+                },
+                {
+                    "text": "Ensemble, ils s'enfoncent dans les profondeurs d'un entrepôt contrôlé par la mafia, prêts à affronter une armée de criminels pour récupérer l'enfant.",
+                    "tag": "p",
+                    "special": []
+                },
+            ],
+            [
+                {
+                    "text": "El Pequeniño était introuvable dans l'entrepôt.",
+                    "tag": "p",
+                    "special": []
+                },
+                {
+                    "text": "À la place, l'équipe découvre une lettre signée par le boss de la mafia, révélant que l'enfant est retenu dans sa luxueuse villa.",
+                    "tag": "p",
+                    "special": []
+                },
+                {
+                    "text": "Sans hésiter, El Lucho, Mike Fury, et Xiao Lyn se préparent à prendre d'assaut le repaire du chef pour terminer leur mission.",
+                    "tag": "p",
+                    "special": []
+                },
+            ],
+            [
+                {
+                    "text": "Félicitations!",
+                    "tag": "h3",
+                    "special": []
+                },
+                {
+                    "text": "El Pequeniño est enfin en sécurité dans les bras de son père, grâce à votre courage et votre détermination !",
+                    "tag": "p",
+                    "special": []
+                },
+                {
+                    "text": "Après avoir affronté des hordes de criminels et vaincu le redoutable boss de la mafia, l'équipe à prouvé que rien ne pouvait briser leur force et leur unité.",
+                    "tag": "p",
+                    "special": []
+                },
+                {
+                    "text": "Vous êtes les véritables champions de cette histoire, bravo !",
+                    "tag": "p",
+                    "special": []
+                },
+                {
+                    "text": "Si ce jeu en JavaScript vous a plu, n'hésitez pas à contacter le développeur, par téléphone au 06.11.31.11.17 ou par email à verduwilliam@gmail.com",
+                    "tag": "p",
+                    "special": [
+                        {
+                            "original": "le développeur",
+                            "replace": "<a href=\"https://fr.linkedin.com/in/william-verdu-239388140\">le développeur</a>"
+                        },
+                        {
+                            "original": "06.11.31.11.17",
+                            "replace": "<a href=\"tel:+33611311117\">06.11.31.11.17</a>"
+                        },
+                        {
+                            "original": "verduwilliam@gmail.com",
+                            "replace": "<a href=\"mailto:verduwilliam@gmail.com\">verduwilliam@gmail.com</a>"
+                        }
+                    ]
+                }
+            ]
+        ]
+    }; // textes affichés dynamiquement
 
     $(function(){ // chargement page
         // Nouvelle partie
@@ -75,15 +159,11 @@
     async function fetchData(){
         const fetchChars = await fetch('https://verduwilliam.github.io/testjson/assets/json/characters.json');
         const fetchFoes = await fetch('https://verduwilliam.github.io/testjson/assets/json/foes.json');
-        const fetchTexts = await fetch('https://verduwilliam.github.io/testjson/assets/json/txt.json');
         const resultChars = await fetchChars.json();
         const resultFoes = await fetchFoes.json();
-        const resultTexts = await fetchTexts.json();
         Promise.all([resultChars, resultFoes, resultTexts]).then(()=>{
             chars = resultChars.chars;
             foes = resultFoes.foes;
-            txtCpu = resultTexts.cpu;
-            txtSplash = resultTexts.splash;
             initHTML();
         })
     }
@@ -741,11 +821,11 @@
         let i = 0;
         let j = 0;
         let intervalText = setInterval(()=>{
-            if( i <= txtCpu[val].length ){
-                $('.splash--cpu .pixText').html(txtCpu[val].substring(0,i));
+            if( i <= txt.cpu[val].length ){
+                $('.splash--cpu .pixText').html(txt.cpu[val].substring(0,i));
                 i++;
-            }else if((val=='retire' || val=='nodeck') && ( j <= txtCpu.enter.length )){
-                $('.splash--cpu .pixText').html(txtCpu[val] + '<br>' + txtCpu.enter.substring(0,j));
+            }else if((val=='retire' || val=='nodeck') && ( j <= txt.cpu.enter.length )){
+                $('.splash--cpu .pixText').html(txt.cpu[val] + '<br>' + txt.cpu.enter.substring(0,j));
                 j++;
             }else{
                 clearInterval(intervalText);
@@ -761,20 +841,20 @@
         let i = 0; // index du paragraphe
         let j = 0; // index du caractere
         let intervalText = setInterval(()=>{
-            if( j < txtSplash[wl[0]][i].text.length ){
-                newTextSplash = newTextSplashBuffer + '<'+txtSplash[wl[0]][i].tag+'>' + txtSplash[wl[0]][i].text.substring(0,j) + '</'+txtSplash[wl[0]][i].tag+'>';
+            if( j < txt.splash[wl[0]][i].text.length ){
+                newTextSplash = newTextSplashBuffer + '<'+txt.splash[wl[0]][i].tag+'>' + txt.splash[wl[0]][i].text.substring(0,j) + '</'+txt.splash[wl[0]][i].tag+'>';
                 $(selector).html(newTextSplash);
                 j++;
             }else{
-                let tmpTxt = txtSplash[wl[0]][i].text;
-                if(txtSplash[wl[0]][i].special.length){
-                    txtSplash[wl[0]][i].special.forEach(child => {
+                let tmpTxt = txt.splash[wl[0]][i].text;
+                if(txt.splash[wl[0]][i].special.length){
+                    txt.splash[wl[0]][i].special.forEach(child => {
                         tmpTxt = tmpTxt.replaceAll(child.original, child.replace);
                     });
                 }
-                newTextSplashBuffer = newTextSplashBuffer + '<'+txtSplash[wl[0]][i].tag+'>' + tmpTxt + '</'+txtSplash[wl[0]][i].tag+'>';
+                newTextSplashBuffer = newTextSplashBuffer + '<'+txt.splash[wl[0]][i].tag+'>' + tmpTxt + '</'+txt.splash[wl[0]][i].tag+'>';
                 $(selector).html(newTextSplashBuffer);
-                if(i<txtSplash[wl[0]].length-1){
+                if(i<txt.splash[wl[0]].length-1){
                     i++;
                     j = 0;
                 }else if(wl[0]<2){
